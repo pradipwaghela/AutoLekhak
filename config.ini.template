@@ -1,0 +1,16 @@
+[Evolution_API]
+SERVER_URL = http://localhost:8081
+INSTANCE_NAME = personal
+API_KEY = FA972B380E9C-4FF0-978D-0BAEA9C41B3E
+
+[INVITATION]   
+GUEST_CSV = D:\Pradip\kk_naming\simant\simant_guest.csv
+COUNTRY_CODE =91
+OUTPUT_CSV = D:\Pradip\kk_naming\simant\output.csv
+Template= D:\Pradip\kk_naming\templates\simant.txt
+
+[Video]
+video_path = C:\Users\e-5051\Videos\Mansi's_Baby_shower.mp4
+
+[document]
+pdf_path=
