@@ -323,6 +323,7 @@ class InvitationNameAdder:
                 )
                 messagebox.showinfo("Success", "Gujarati font loaded successfully!\n\nYou can now proceed with adding positions.")
             except Exception as e:
+                print(f"Error {e}")
                 messagebox.showerror("Error", f"Failed to load font:\n{str(e)}")
     
     def load_pdf(self):
@@ -343,6 +344,7 @@ class InvitationNameAdder:
                 self.display_page()
                 
             except Exception as e:
+                print(f"Error {e}")
                 messagebox.showerror("Error", f"Failed to load PDF:\n{str(e)}")
     
     def display_page(self):
@@ -455,6 +457,7 @@ class InvitationNameAdder:
                 )
                 
             except Exception as e:
+                print(f"Error {e}")
                 messagebox.showerror("Error", f"Failed to load CSV:\n{str(e)}")
     
     def add_text_to_pdf_page(self, pdf_page, text, x, y, font_size, color_rgb):
@@ -615,6 +618,7 @@ class InvitationNameAdder:
                         "Then test again!")
                 
             except Exception as e:
+                print(f"Error {e}")
                 messagebox.showerror("Error", f"Failed to generate test:\n{str(e)}")
         
         ttk.Button(test_window, text="Generate Test PDF", 
@@ -711,7 +715,7 @@ class InvitationNameAdder:
 
                 safe_name = self.make_safe_filename(guest_name, repl="_")
                 # Save with compression
-                output_path = os.path.join(output_dir, f"invitation_{safe_name}.pdf")
+                output_path = os.path.join(output_dir, f"આમંત્રણ_{safe_name}.pdf")
 
                 
                 # Save with garbage collection and compression
@@ -736,6 +740,7 @@ class InvitationNameAdder:
                 f"✅ Generated {len(guests)} invitations!\n\nSaved to: {output_dir}")
             
         except Exception as e:
+            print(f"Error {e}")
             messagebox.showerror("Error", f"Failed to generate invitations:\n{str(e)}")
 
 def main():
