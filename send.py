@@ -195,7 +195,7 @@ if "whatsapp_status" not in df.columns:
     df["whatsapp_status"] = ""
 for idx, row in df.iterrows():
     #Random sleep to prevent block from meta 
-    # sleep_random_number(25,150)
+    sleep_random_number(25,150)
     name = row.get("name")
     contact = row.get("contact")
     file_path = row.get("file_path")
