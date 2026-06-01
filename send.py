@@ -62,7 +62,7 @@ def send_message(row,config,template_message) :
         send_video_message(name,contact,file_path,message)
     else : 
         return "wrong_media"
-    sleep_random_number(25,150)
+    sleep_random_number(20,65)
     return "success"
     #Check if CSV has the file tye
         #Check its type 
