@@ -60,6 +60,9 @@ def send_message(row,config,template_message) :
         send_pdf_message(name,contact,file_path,message)
     elif media_type == "video" :
         send_video_message(name,contact,file_path,message)
+    else : 
+        return "wrong_media"
+    sleep_random_number(25,150)
     return "success"
     #Check if CSV has the file tye
         #Check its type 
@@ -195,19 +198,16 @@ if "whatsapp_status" not in df.columns:
     df["whatsapp_status"] = ""
 for idx, row in df.iterrows():
     #Random sleep to prevent block from meta 
-    sleep_random_number(25,150)
+    whatsapp_status = str(row.get("whatsapp_status"))
+    if whatsapp_status.lower()  == "success" :
+        continue
     name = row.get("name")
     contact = row.get("contact")
     file_path = row.get("file_path")
-    whatsapp_status = str(row.get("whatsapp_status"))
     if not contact or pd.isna(contact):
         print(f"[!] Missing number for {name}")
         df.at[idx, "whatsapp_status"] = "Failed (No number)"
         continue
-    if whatsapp_status.lower()  == "success" :
-        continue
-
-
     result = send_message(row, config, INVITATION_MESSAGE)
     df.at[idx, "whatsapp_status"] = result
 
