@@ -94,6 +94,7 @@ def check_number_exists(contact):
         print(f"[!] Error checking number {contact}: {e}")
         return False
 def send_video_message(name,contact, file_path,message):
+        print(f"Trying to send video message to {name}")
         headers = {
             "apikey": API_KEY,
             "Content-Type": "application/json"
@@ -138,6 +139,7 @@ def send_video_message(name,contact, file_path,message):
             print(f"[!] File not found for {name}: {file_path}")
 # === Function to send message ===
 def send_pdf_message(name, contact,file_path,message):
+        print(f"Trying to send pdf message to {name}")
         headers = {
             "apikey": API_KEY,
             "Content-Type": "application/json"
